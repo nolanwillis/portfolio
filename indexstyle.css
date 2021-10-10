@@ -245,7 +245,7 @@ body::-webkit-scrollbar {
 .greetingcard0.open .greetingcard0-textcontainer h2{
     font-family: Roboto;
     font-weight: 100;
-    font-size: 250%;
+    font-size: 36px;
     visibility: visible;
 }
 /* card1, 2 states */
