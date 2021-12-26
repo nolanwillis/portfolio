@@ -1,23 +1,13 @@
 const menuBtn = document.querySelector('.menu-btn')
 const menu = document.querySelector('.menu')
-const greetingcard0 = document.querySelector('.greetingcard0')
-const greetingcard1 = document.querySelector('.greetingcard1')
+const card0 = document.querySelector('.card0')
+const card1 = document.querySelector('.card1')
 const greeting = document.getElementById('greeting')
-const scrollPrompt = document.getElementById('scrollPrompt')
+/* const scrollPrompt = document.getElementById('scrollPrompt') */
 
-const projectcircle = document.querySelector('.projectcircle2')
-const projectcontent = document.querySelector('.projectcontent')
-const aboutcircle = document.querySelector('.aboutcircle2')
-const aboutcontent = document.querySelector('.aboutcontent')
-const techcircle = document.querySelector('.techcircle2')
-const techcontent = document.querySelector('.techcontent')
 
 let menuOpen = false;
 let cardUnfold = false;
-
-let projectOpen = false;
-let aboutOpen = false;
-let techOpen = false;
 
 menuBtn.addEventListener('click', () => {
     if(!menuOpen){
@@ -32,73 +22,41 @@ menuBtn.addEventListener('click', () => {
     }
 })
 
-greetingcard0.addEventListener('click', () => {
+card0.addEventListener('click', () => {
     if(!cardUnfold){
-        greetingcard0.classList.add('open')
-        greetingcard1.classList.add('open')
+        card0.classList.add('open')
+        card1.classList.add('open')
         greeting.innerHTML = "I'm Nolan, nice to meet you."
-        scrollPrompt.innerHTML = "Take a look around ---->"
+        /* scrollPrompt.innerHTML = "Take a look around ---->" */
         cardUnfold = true
     }
     else {
-        greetingcard0.classList.remove('open')
-        greetingcard1.classList.remove('open')
+        card0.classList.remove('open')
+        card1.classList.remove('open')
         greeting.innerHTML = "Hi,"
-        scrollPrompt.innerHTML = " "
+        /* scrollPrompt.innerHTML = " " */ 
         cardUnfold = false
     }
 })
 
-greetingcard1.addEventListener('click', () => {
+card1.addEventListener('click', () => {
     if(!cardUnfold){
-        greetingcard0.classList.add('open')
-        greetingcard1.classList.add('open')
+        card0.classList.add('open')
+        card1.classList.add('open')
         greeting.innerHTML = "I'm Nolan, nice to meet you."
-        scrollPrompt.innerHTML = "Take a look around ---->"
+        /* scrollPrompt.innerHTML = "Take a look around ---->" */ 
         cardUnfold = true
     }
     else {
-        greetingcard0.classList.remove('open')
-        greetingcard1.classList.remove('open')
+        card0.classList.remove('open')
+        card1.classList.remove('open')
         greeting.innerHTML = "Hi,"
-        scrollPrompt.innerHTML = " "
+        /* scrollPrompt.innerHTML = " " */
         cardUnfold = false
     }
 })
 
-projectcircle.addEventListener('click', () => {
-    if(!projectOpen){
-        projectcontent.classList.add('open')
-        projectOpen = true
-    }
-    else {
-        projectcontent.classList.remove('open')
-        projectOpen = false
-    }
-})
 
-
-aboutcircle.addEventListener('click', () => {
-    if(!techOpen){
-        aboutcontent.classList.add('open')
-        aboutOpen = true
-    }
-    else {
-        aboutcontent.classList.remove('open')
-        aboutOpen = false
-    }
-})
-
-techcircle.addEventListener('click', () => {
-    if(!techOpen){
-        techcontent.classList.add('open')
-        techOpen = true
-    }
-    else {
-        techcontent.classList.remove('open')
-        techOpen = false
-    }
-})
 
 window.addEventListener("DOMContentLoaded", function () {
     // get the form elements defined in your form HTML above
