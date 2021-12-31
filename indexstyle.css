@@ -1,11 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitter&family=Megrim&family=Open+Sans:wght@300&display=swap');
-
-
 :root {
-    --blueblack: #1D1F2F;
-    --darkblue: #214358;
-    --lightgrey: #aaaaaa;
-    --bluegreen: #3c6e71; 
+    --blueblack: #041019;
+    --darkblue: #042335;
+    --bluegreen: #335569;
+    --bluegrey: #7f8ea0;
 }
 * {
     box-sizing: border-box;
@@ -31,16 +29,11 @@ body::-webkit-scrollbar {
     height: 100vh;
     width: 100vw;
     z-index: 0;
-    opacity: 40%;
+    opacity: 30%;
     background-image: url("indexbackground.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-
-
-
-/* Menu */
 .menu{
     position: absolute;
     display: flex;
@@ -50,13 +43,13 @@ body::-webkit-scrollbar {
     height: 100%;
     width: 100%;
     top: -5000px;
-    z-index: 1;
+    z-index: 2;
     opacity: 99%;
-    line-height: 90px;
-    font-family: Roboto;
-    font-size: 48px;
+    line-height: 150px;
+    font-family: 'Open Sans';
+    font-size: 36px;
     transition: all .5s ease-in-out;
-    background-color: white;
+    background-color: var(--blueblack);
 }
 .menu.open{
     top: 0;
@@ -66,41 +59,22 @@ body::-webkit-scrollbar {
 }
 .menu a{
     text-decoration: none;
-    color: black;
+    color: white;
 }
 .menu a:hover {
-    opacity: 50%;
+    color: white;
 }
-
-
-
-
-
-
-
-
-
-
-
 .main-container {
     position: relative;
     display: grid;
-    grid-template-columns: .25fr 1fr .25fr;
+    grid-template-columns: .3fr 1fr .3fr;
     grid-template-rows: 1fr;
     grid-template-areas: "col1 col2 col3";
     overflow: hidden;
     height: 100vh;
     width: 100vw;
-    background-color: var(--blueblack);
+    background-color: black;
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -113,47 +87,20 @@ body::-webkit-scrollbar {
     justify-content: flex-start;
     align-items: center;
     grid-area: col1;
+    margin-top: 2em;
     height: 100%;
     width: 100%;
-    /* background-color: orange; */
 }
-
 .logo {
     position: relative;
     height: auto;
     width: auto;
 }
 .logo h1 {
-    font-size: 48px;
+    font-size: 56px;
     font-family: Megrim;
     color: white;
 }
-
-/* .sociallinks {
-    position: relative;
-    order: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: 300px;
-    width: 100px;
-    top: 50em;
-}
-.sociallinks i {
-    cursor: pointer;
-    font-size: 36px;
-    color: white;
-} */
-
-
-
-
-
-
-
-
-
 
 
 
@@ -166,21 +113,24 @@ body::-webkit-scrollbar {
     justify-content: center;
     align-items: center;
     grid-area: col2;
+    overflow-y: scroll;
     height: 100%;
     width: 100%;
 }
 
-/* The container that holds cards */
-.card-container {
-    position: relative;
+.col2::-webkit-scrollbar{
+    width: 0;
+}
+.greetingdeck {
+    position: absolute;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: auto;
-    width: auto;
+    top: 0;
+    height: 100%;
+    width: 100%;
 }
-/* card0 (the card behind card1), 2 states */
 .card0 {
     position: absolute;
     display: flex;
@@ -189,16 +139,14 @@ body::-webkit-scrollbar {
     height: 500px;
     width: 600px;
     cursor: pointer;
-    border: 5px solid var(--lightgrey);
+    border: 5px solid var(--bluegrey);
     transform: rotate(-10deg);
     transition: all .5s ease-in-out
 }
 .card0.open {
-    background-color: var(--lightgrey);
+    background-color: var(--bluegrey);
     transform: translateX(-250px) rotate(-90deg);
 }
-/* Container that wraps the text within card0, 
-2 states relative to the state of card0 */
 .card0-text {
     position: absolute;
     display: flex;
@@ -214,8 +162,6 @@ body::-webkit-scrollbar {
     width: 400px;
     transform: rotate(90deg);
 }
-/* The actual text within card0-text, 
-2 states relative to the state of card0 */
 .card0 .card0-text h2 {
     font-family: Bitter;
     font-weight: 100;
@@ -225,8 +171,6 @@ body::-webkit-scrollbar {
 .card0.open .card0-text h2{
     visibility: visible;
 } 
-
-/* card1, 2 states */
 .card1{
     position: absolute;
     display: flex;
@@ -235,14 +179,13 @@ body::-webkit-scrollbar {
     height: 500px;
     width: 600px;
     cursor: pointer;
-    background-color: var(--lightgrey);
+    background-color: var(--blueblack);
+    color: white;
     transition: all .5s ease-in-out;
 }
 .card1.open {
     transform: translateX(250px) rotate(90deg);
 }
-/* Container that wraps the text within card1, 
-2 states relative to the state of card1 */
 .card1-text {
     position: absolute;
     display: flex;
@@ -263,12 +206,179 @@ body::-webkit-scrollbar {
 .card1.open .card1-text h1 {
     font-size: 60px;
 }
-
-
-
-
-
-
+.projects {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr ;
+    grid-template-areas: "p1deck p2deck p3deck"
+                         "p4deck p5deck p6deck";
+    top: 100%;
+    height: 100%;
+    width: 100%;
+}
+.p1deck {
+    position: relative;
+    grid-area: p1deck;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+.card2 {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 500px;
+    cursor: pointer;
+    border: 5px solid var(--blueblack);
+    color: var(--bluegrey);
+    transition: all .5s ease-in-out
+}
+.card2.open {
+    background-color: var(--blueblack);
+    transform: translateY(200px);
+}
+.card2-text {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
+.card2.open .card2-text {
+    opacity: 1;
+    height: auto;
+    width: 200px;
+}
+.card2 .card2-text h2 {
+    font-family: Bitter;
+    font-weight: 100;
+    font-size: 28px;
+    visibility: hidden;
+}
+.card2.open .card2-text h2{
+    visibility: visible;
+} 
+.card3{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 500px;
+    cursor: pointer;
+    background-color: var(--blueblack);
+    transition: all .5s ease-in-out;
+}
+.card3.open {
+    transform: translateY(-200px);
+}
+.card3-text {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 200px;
+    color: white;
+    transition: all .5s ease-in-out;
+}
+.card3-text h1 {
+    font-family: "Open Sans";
+    font-size: 60px;
+}
+.p2deck {
+    position: relative;
+    grid-area: p2deck;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    height: auto;
+    width: auto;
+}
+.card4 {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 500px;
+    cursor: pointer;
+    border: 5px solid var(--blueblack);
+    color: var(--bluegrey);
+    transition: all .5s ease-in-out
+}
+.card4.open {
+    background-color: var(--blueblack);
+    transform: translateY(200px);
+}
+.card4-text {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
+.card4.open .card4-text {
+    opacity: 1;
+    height: auto;
+    width: 200px;
+}
+.card4 .card4-text h2 {
+    font-family: Bitter;
+    font-weight: 100;
+    font-size: 28px;
+    visibility: hidden;
+}
+.card4.open .card4-text h2{
+    visibility: visible;
+} 
+.card5{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 500px;
+    cursor: pointer;
+    background-color: var(--blueblack);
+    transition: all .5s ease-in-out;
+}
+.card5.open {
+    transform: translateY(-200px);
+}
+.card5-text {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 200px;
+    color: white;
+    transition: all .5s ease-in-out;
+}
+.card5-text h1 {
+    font-family: "Open Sans";
+    font-size: 60px;
+}
+.tech {
+    position: absolute;
+    display: flex;
+    top: 200%;
+    height: 100%;
+    width: 100%;
+    background-color: orchid;
+}
 
 
 
@@ -282,6 +392,7 @@ body::-webkit-scrollbar {
     align-items: center;
     grid-area: col3;
     overflow: hidden;
+    margin-top: 2em;
     height: 100%;
     width: 100%;
     /* background-color: teal; */
@@ -292,7 +403,8 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    z-index: 1;
+    z-index: 2;
+    padding: 0;
     height: 75px;
     width: 75px;
     cursor: pointer;
@@ -300,125 +412,248 @@ body::-webkit-scrollbar {
 }
 .menu-btn-burger {
     position: absolute;
-    height: 6px;
+    height: 5px;
     width: 60px;
     background-color: white;
     transition: all .5s ease-in-out;
 }
 .menu-btn.open .menu-btn-burger {
-    background-color: black;
     box-shadow: none;
     transform: rotate(45deg) translate(5px, 5px);
 }
 .menu-btn-burger::after{
     position: absolute;
     content: '';
-    height: 6px;
-    width: 60px;
+    height: 5px;
+    width: 40px;
     background-color: white;
-    transform: translateY(16px);
+    transform: translate(20px,16px);
     transition: all .5s ease-in-out;
 }
 .menu-btn.open .menu-btn-burger::after{
-    background-color: black;
-    box-shadow: none;
+    width: 60px;
     transform: rotate(-90deg) translate(0px, 0px);
 }
-/* .col3-text {
-    position: relative;
-    order: 2;
-    justify-content: center;
-    align-items: center;
-    width: 350px;
-    font-family: Roboto;
-    font-size: 28px;
-    color: white;
-    transform: rotate(90deg);
-} */
+
+
 
 
 /*-------------------------------Multimedia Versions------------------------------------*/
 
 
-@media screen and (max-width: 1278px) {
-    .main-container {
+
+
+@media screen and (max-width:1760px) {
+    .main-container{
         grid-template-columns: 1fr;
-        grid-template-rows: 3fr .4fr;
-        grid-template-areas: "col2"
-                             "col1";           
+        grid-template-rows: .1fr .075fr 1fr;
+        grid-template-areas: "col1"
+                             "col3"
+                             "col2";
     }
-    /* .sociallinks {
-        flex-direction: row;
-        margin-bottom: 0;
-        min-width: 500px;
-        top: 0;
-    } */
-    
-
+    .logo h1 {
+        font-size:62px;
+    }
+    .col3 {
+        margin: 0;
+    }
+    .menu-btn-burger::after {
+        width: 60px;
+        transform: translate(0px, 16px);
+    }
+    .projects {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "p1deck"
+                             "p2deck";
+        padding-top: 4em;
+    }
+    .p1deck{
+        align-items: end;
+        height: 85%;
+    }
+    .card2 {
+        width: 400px;
+    }
+    .card2.open {
+        transform: translateY(0px);
+        transform: translateX(200px);
+    }
+    .card3 {
+        width: 400px;
+    }
+    .card3.open {
+        transform: translateY(0px);
+        transform: translateX(-200px);
+    }
+    .p2deck {
+        align-items: start;
+        height: 85%;
+    }
+    .card4 {
+        width: 400px;
+    }
+    .card4.open {
+        transform: translateY(0px);
+        transform: translateX(200px);
+    }
+    .card5 {
+        width: 400px;
+    }
+    .card5.open {
+        transform: translateY(0px);
+        transform: translateX(-200px);
+    }
 }
-
-@media  screen and (max-width: 999px) {
-    /* COL2 */
+@media screen and (max-width: 1070px) {
     .card0 {
-        height: 250px;
-        width: 350px;
+        height: 400px;
+        width: 500px;
     }
     .card0.open {
-        transform: translateY(125px);
+        transform: translateY(200px);
     }
     .card0.open .card0-text {
-        height: auto;
-        width: 200px;
         transform: rotate(0deg);
     }
-    .card0-text h2 {
-        font-size: 22px;
-    }
     .card0.open .card0-text h2{
-        font-size: 18px;
+        font-size: 28px;
     }
     .card1{
-        height: 250px;
-        width: 350px;
+        height: 400px;
+        width: 500px;
     }
     .card1.open {
-        transform: translateY(-125px);
-    }
-    .card1-text {
-        height: auto;
-        width: 200px;
+        transform: translateY(-200px);
     }
     .card1.open .card1-text {
         transform: rotate(0deg);
     }
-    .card1-text h1 {
-        font-size: 60px;
+    .card1.open .card1-text h1 {
+        font-size: 56px;
+    }
+}
+@media screen and (max-width: 950px) {
+    .card2.open{
+       transform: translateX(0);
+       transition: none;
+    }
+    .card3.open {
+       transform: translateX(0);
+       z-index: -1;
+    }
+    .card4.open {
+       transform: translateX(0);
+       transition: none;
+    }
+    .card5.open {
+       transform: translateX(0);
+       z-index: -1;
+    }
+}
+@media  screen and (max-width: 650px){
+    .card0 {
+        width: 400px;
+        height: 300px;
+    }
+    .card0.open {
+        transform: translateY(150px);
+    }
+    .card0.open .card0-text {
+        width: 300px;
+    }
+    .card0.open .card0-text h2 {
+        font-size: 21px;
+    }
+    .card1.open {
+        transform: translateY(-150px);
+    }
+    .card1 {
+        width: 400px;
+        height: 300px;
+    }
+    .card1-text {
+        width: 350px;
+    }
+    .card1 .card1-text h1{
+        font-size: 80px;
     }
     .card1.open .card1-text h1 {
-        font-size: 30px;
+        font-size: 48px;
     }
 }
 
-@media screen and (max-width: 499px) {
-    /* SCREEN0 */
-    .main-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
-        grid-template-areas: "col2";
-        height: 100vh;        
+@media screen and (max-width: 450px) {
+    .main-container{
+        grid-template-rows: .125fr .15fr 1fr;
     }
-   /*  .sociallinks {
-        height: 0;
-        width: 0;
-        visibility: hidden;
-    } */
+    .logo h1 {
+        font-size: 48px;
+    }
     .card0 {
-        transform: rotate(-2deg) translateY(-20px);
+        width: 250px;
+        height: 200px;
+    }
+    .card0.open {
+        transform: translateY(100px);
+    }
+    .card0.open .card0-text {
+        width: 200px;
+    }
+    .card0.open .card0-text h2 {
+        font-size: 14px;
+    }
+    .card1.open {
+        transform: translateY(-100px);
     }
     .card1 {
-        transform: rotate(2deg);
+        width: 250px;
+        height: 200px;
     }
-   
+    .card1-text {
+        width: 200px;
+    }
+    .card1 .card1-text h1{
+        font-size: 60px;
+    }
+    .card1.open .card1-text h1 {
+        font-size: 32px;
+    }
+    .p1deck{
+        align-items: center;
+        height: 60%;
+    }
+    .card2 {
+        width: 250px;
+        height: 200px;
+    }
+    .card2 .card2-text h2 {
+        font-size: 20px;
+    }
+    .card3 {
+        width: 250px;
+        height: 200px;
+    }
+    .card3-text h1 {
+        font-size: 52px;
+    }
+    .p2deck {
+        align-items: center;
+        height: 60%;
+    }
+    .card4 {
+        width: 250px;
+        height: 200px;
+    }
+
+    .card4 .card4-text h2 {
+        font-size: 20px;
+    }
+    .card5 {
+        width: 250px;
+        height: 200px;
+    }
 }
+
 
 
