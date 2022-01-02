@@ -55,9 +55,10 @@ body::-webkit-scrollbar {
     top: -5000px;
     z-index: 2;
     opacity: 99%;
-    line-height: 150px;
+    line-height: 125px;
+    text-align: center;
     font-family: 'Open Sans';
-    font-size: 36px;
+    font-size: 32px;
     transition: all .5s ease-in-out;
     background-color: var(--blueblack);
 }
@@ -118,25 +119,27 @@ body::-webkit-scrollbar {
     max-width: 500px;
     margin: 0 auto;
     padding: 20px;
+    color: white;
     box-shadow: 0px 0px 20px #00000010;
-    background: linear-gradient(0deg, #e81cff, #40c9ff);
-    font-family: Roboto;
-    border-radius: 8px;
+    background-color: var(--bluegreen);
+    font-family: "Open Sans";
     margin-bottom: 20px;
 }
 .form-group {
     width: 100%;
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 24px;
 }
 .form-group input,
  .form-group textarea {
     width: 100%;
     padding: 5px;
-    font-size: 18px;
-    border-radius: 5px;
+    font-size: 24px;
     border: 1px solid rgba(128, 128, 128, 0.199);
     margin-top: 5px;
+    font-family: Bitter;
+    color: white;
+    background-color: var(--darkblue);
 }
 textarea {
     resize: vertical;
@@ -147,17 +150,17 @@ button[type="submit"] {
     outline: none;
     padding: .2em;
     font-size: 24px;
-    border-radius: 8px;
-    font-family: Damion;
-    color: black;
+    font-family: Megrim;
+    color: white;
+    background-color: var(--darkblue);
     text-align: center;
     cursor: pointer;
     margin-top: 10px;
     transition: 0.3s ease background-color;
 }
 button[type="submit"]:hover {
-    background-color: #f67014;
-    color: white;
+    background-color: var(--bluegrey);
+    color: black;
 }
 #status {
     width: 90%;

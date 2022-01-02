@@ -20,17 +20,41 @@ body::-webkit-scrollbar {
 }
 
 
-
-.background{
+.backgrounds {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200vh;
+    width: 100vw;
+    z-index: 0;
+}
+.background1{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    top: 0;
     height: 100vh;
     width: 100vw;
     z-index: 0;
     opacity: 30%;
     background-image: url("indexbackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.background2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    top: 100%;
+    z-index: 0;
+    opacity: 30%;
+    background-image: url("techbackground.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -45,9 +69,10 @@ body::-webkit-scrollbar {
     top: -5000px;
     z-index: 2;
     opacity: 99%;
-    line-height: 150px;
+    line-height: 125px;
+    text-align: center;
     font-family: 'Open Sans';
-    font-size: 36px;
+    font-size: 32px;
     transition: all .5s ease-in-out;
     background-color: var(--blueblack);
 }
