@@ -280,7 +280,7 @@ body::-webkit-scrollbar {
 .card2.open .card2-text {
     opacity: 1;
     height: auto;
-    width: 200px;
+    width: 300px;
 }
 .card2 .card2-text h2 {
     font-family: Bitter;
@@ -303,6 +303,10 @@ body::-webkit-scrollbar {
     transition: all .5s ease-in-out;
 }
 .card3.open {
+    background-image: url("portfolio.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateY(-200px);
     transform: translateY(-200px);
 }
 .card3-text {
@@ -357,7 +361,7 @@ body::-webkit-scrollbar {
 .card4.open .card4-text {
     opacity: 1;
     height: auto;
-    width: 200px;
+    width: 300px;
 }
 .card4 .card4-text h2 {
     font-family: Bitter;
@@ -380,8 +384,13 @@ body::-webkit-scrollbar {
     transition: all .5s ease-in-out;
 }
 .card5.open {
+    background-image: url("hungry.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     transform: translateY(-200px);
 }
+
+
 .card5-text {
     position: absolute;
     display: flex;
@@ -606,6 +615,10 @@ body::-webkit-scrollbar {
     .card1.open .card1-text h1 {
         font-size: 48px;
     }
+
+    .card4-text{
+        width: 300;
+    }
 }
 
 @media screen and (max-width: 450px) {
@@ -670,7 +683,6 @@ body::-webkit-scrollbar {
         width: 250px;
         height: 200px;
     }
-
     .card4 .card4-text h2 {
         font-size: 20px;
     }
