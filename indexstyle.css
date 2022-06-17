@@ -162,7 +162,6 @@ body::-webkit-scrollbar {
     align-items: center;
     opacity: 0;
     transform: rotate(-10deg);
-    transition: all .5s ease-in-out;
 }
 .card0.open .card0-text {
     opacity: 1;
@@ -203,7 +202,6 @@ body::-webkit-scrollbar {
     padding: 5em;
     height: auto;
     width: auto;
-    transition: all .5s ease-in-out;
 }
 .card1-text-alt {
     position: absolute;
@@ -213,7 +211,6 @@ body::-webkit-scrollbar {
     padding: 2em;
     height: auto;
     width: auto;
-    transition: all .5s ease-in-out;
     visibility: hidden;
 }
 .card1-text-alt h1 {
@@ -233,14 +230,12 @@ body::-webkit-scrollbar {
     font-size: 3em;
 }
 .sociallinks {
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: auto;
-    margin-bottom: 3em;
+    bottom: 2em;
     width: 30%;
-    height: auto;
     font-size: 3em;
 }
 .sociallinks a{
@@ -594,6 +589,9 @@ body::-webkit-scrollbar {
                              "col3"
                              "col2";
     }
+    .greetingdeck{
+        top: -5em
+    }
     .logo h1 {
         font-size:62px;
     }
@@ -601,13 +599,16 @@ body::-webkit-scrollbar {
         margin: 0;
     }
     .sociallinks{
-        min-width: 200px;
+        min-width: 300px;
     }
 }
 @media screen and (max-width: 1070px) {
     .card0 {
         height: 300px;
         width: 400px;
+    }
+    .card0-text h1 {
+        font-size: 5em;
     }
     .card0.open {
         transform: translateY(150px);
@@ -625,7 +626,7 @@ body::-webkit-scrollbar {
         width: 400px;
     }
     .card1-text{
-        font-size: 1em;
+        font-size: .7em;
     }
     .card1.open {
         transform: translateY(-150px);
@@ -633,12 +634,10 @@ body::-webkit-scrollbar {
     .card1.open .card1-text {
         transform: rotate(0deg);
         padding: 1em;
+        font-size: .8em;
     }
     .card1.open .card1-text h1 {
        font-size: 3em;
-    }
-    .sociallinks {
-        margin-bottom: 2em;
     }
 }
 @media  screen and (max-width: 650px){
@@ -656,9 +655,6 @@ body::-webkit-scrollbar {
         width: 400px;
         height: 300px;
     }
-   .sociallinks a{
-    font-size: .8em;
-   }
    .card2 {
     width: 200px;
     height: 250px;
@@ -737,6 +733,9 @@ body::-webkit-scrollbar {
     .card1.open .card1-text h1 {
         font-size: 2em;
     }
+    .sociallinks {
+        bottom: 2em;
+    }
         .card2 {
         width: 200px;
         height: 250px;
@@ -801,22 +800,50 @@ body::-webkit-scrollbar {
 
 @media screen and (max-height: 1100px){
     .projects{
-        height: 150%;
+        height: 140%;
+    }
+    .card0.open .card0-text {
+        padding-left: .2em;
+        padding-right: .2em;
+    }
+    .card0.open .card0-text h2{
+        font-size: 1.39em;
+    }
+    .sociallinks a{
+        font-size: .8em;
     }
 }
 
-@media screen and (max-height: 800px){
-    .sociallinks{
-        margin-bottom: .6em;
-    }
-    .sociallinks a{
-        font-size: .6em;
+@media screen and (max-height: 1000px){
+    .col3 {
+        height: 200%;
     }
 }
 
 @media screen and (max-height: 700px){
+    .sociallinks{
+        bottom: 1em;
+    }
     .projects{
         height: 200%;
+    }
+     .card0{
+        height: 250px;
+        transform: translate(0px);
+        transform: rotate(0deg);
+        transition: none;
+    }
+   
+    .card0.open{
+        transform: translate(0px);
+        transform: rotate(0deg);
+        visibility: visible;
+    }
+    .card0.open .card0-text {
+        padding: 1em;
+    }
+    .card0.open .card0-text h2 {
+        font-size: 1.4em;
     }
     .card1-text{
         visibility: hidden;
@@ -827,19 +854,11 @@ body::-webkit-scrollbar {
     .card1.open .card1-text-alt{
         visibility: hidden;
     }
-    .card0{
-        transform: translate(0px);
-        transform: rotate(0deg);
-    }
-   
-    .card0.open{
-        transform: translate(0px);
-        transform: rotate(0deg);
-        visibility: visible;
-    }
     .card1{
+        height: 250px;
         transform: translate(0px);
         transform: rotate(0deg);
+        transition: none;
     }
     .card1.open{
         transform: translate(0px);
@@ -855,5 +874,6 @@ body::-webkit-scrollbar {
         height: 250%;
     }
 }
+
 
 
