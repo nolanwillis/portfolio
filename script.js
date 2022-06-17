@@ -6,14 +6,6 @@ const card2 = document.querySelector('.card2')
 const card3 = document.querySelector('.card3')
 const card4 = document.querySelector('.card4')
 const card5 = document.querySelector('.card5')
-/* const card6 = document.querySelector('.card6')
-const card7 = document.querySelector('.card7')
-const card8 = document.querySelector('.card8')
-const card9 = document.querySelector('.card9')
-const card10 = document.querySelector('.card10')
-const card11 = document.querySelector('.card11')
-const card12 = document.querySelector('.card12')
-const card13 = document.querySelector('.card13') */
 const greeting = document.getElementById('greeting')
 let menuOpen = false;
 let greetingDeckUnfold = false;
@@ -72,162 +64,85 @@ card1.addEventListener('click', () => {
         greetingDeckUnfold = false
     }
 })
-
+/* Portfolio */
 card2.addEventListener('click', () => {
   if(!p1DeckUnfold){
       card2.classList.add('open')
       card3.classList.add('open')
-      p1DeckUnfold = true
+      p1DeckUnfold = true;
   }
   else {
       card2.classList.remove('open')
       card3.classList.remove('open')
-      p1DeckUnfold = false
+      p1DeckUnfold = false;
   }
 })
-
 card3.addEventListener('click', () => {
   if(!p1DeckUnfold){
       card2.classList.add('open')
       card3.classList.add('open')
-      p1DeckUnfold = true
+      p1DeckUnfold = true;
   }
   else {
       card2.classList.remove('open')
       card3.classList.remove('open')
-      p1DeckUnfold = false
+      p1DeckUnfold = false;
   }
 })
 
+/* Hungry */
 card4.addEventListener('click', () => {
   if(!p2DeckUnfold){
       card4.classList.add('open')
       card5.classList.add('open')
-      p2DeckUnfold = true
+      p2DeckUnfold = true;
   }
   else {
       card4.classList.remove('open')
       card5.classList.remove('open')
-      p2DeckUnfold = false
+      p2DeckUnfold = false;
   }
 })
-
 card5.addEventListener('click', () => {
   if(!p2DeckUnfold){
       card4.classList.add('open')
       card5.classList.add('open')
-      p2DeckUnfold = true
+      p2DeckUnfold = true;
   }
   else {
       card4.classList.remove('open')
       card5.classList.remove('open')
-      p2DeckUnfold = false
+      p2DeckUnfold = false;
   }
 })
 
-/* card6.addEventListener('click', () => {
+/* Graphics */
+card6.addEventListener('click', () => {
   if(!p3DeckUnfold){
       card6.classList.add('open')
       card7.classList.add('open')
-      p3DeckUnfold = true
+      p3DeckUnfold = true;
   }
   else {
       card6.classList.remove('open')
       card7.classList.remove('open')
-      p3DeckUnfold = false
+      p3DeckUnfold = false;
   }
 })
 
-card7.addEventListener('click', () => {
+card3.addEventListener('click', () => {
   if(!p3DeckUnfold){
       card6.classList.add('open')
       card7.classList.add('open')
-      p3DeckUnfold = true
+      p3DeckUnfold = true;
   }
   else {
       card6.classList.remove('open')
       card7.classList.remove('open')
-      p3DeckUnfold = false
+      p3DeckUnfold = false;
   }
 })
 
-card8.addEventListener('click', () => {
-  if(!p4DeckUnfold){
-      card8.classList.add('open')
-      card9.classList.add('open')
-      p4DeckUnfold = true
-  }
-  else {
-      card8.classList.remove('open')
-      card9.classList.remove('open')
-      p4DeckUnfold = false
-  }
-})
-
-card9.addEventListener('click', () => {
-  if(!p4DeckUnfold){
-      card8.classList.add('open')
-      card9.classList.add('open')
-      p4DeckUnfold = true
-  }
-  else {
-      card8.classList.remove('open')
-      card9.classList.remove('open')
-      p4DeckUnfold = false
-  }
-})
-
-card10.addEventListener('click', () => {
-  if(!p5DeckUnfold){
-      card10.classList.add('open')
-      card11.classList.add('open')
-      p5DeckUnfold = true
-  }
-  else {
-      card10.classList.remove('open')
-      card11.classList.remove('open')
-      p5DeckUnfold = false
-  }
-})
-
-card11.addEventListener('click', () => {
-  if(!p5DeckUnfold){
-      card10.classList.add('open')
-      card11.classList.add('open')
-      p5DeckUnfold = true
-  }
-  else {
-      card10.classList.remove('open')
-      card11.classList.remove('open')
-      p5DeckUnfold = false
-  }
-})
-
-card12.addEventListener('click', () => {
-  if(!p6DeckUnfold){
-      card12.classList.add('open')
-      card13.classList.add('open')
-      p6DeckUnfold = true
-  }
-  else {
-      card12.classList.remove('open')
-      card13.classList.remove('open')
-      p6DeckUnfold = false
-  }
-})
-
-card13.addEventListener('click', () => {
-  if(!p6DeckUnfold){
-      card12.classList.add('open')
-      card13.classList.add('open')
-      p6DeckUnfold = true
-  }
-  else {
-      card12.classList.remove('open')
-      card13.classList.remove('open')
-      p6DeckUnfold = false
-  }
-}) */
 
 
 window.addEventListener("DOMContentLoaded", function () {

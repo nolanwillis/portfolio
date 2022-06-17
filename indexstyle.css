@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitter&family=Megrim&family=Open+Sans:wght@300&display=swap');
 :root {
     --blueblack: #041019;
-    --darkblue: #042335;
-    --bluegreen: #335569;
-    --bluegrey: #7f8ea0;
 }
 * {
     box-sizing: border-box;
@@ -44,20 +41,7 @@ body::-webkit-scrollbar {
     background-repeat: no-repeat;
     background-size: cover;
 }
-.background2 {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
-    top: 100%;
-    z-index: 0;
-    opacity: 30%;
-    background-image: url("techbackground.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+
 .menu{
     position: absolute;
     display: flex;
@@ -135,7 +119,7 @@ body::-webkit-scrollbar {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     grid-area: col2;
     overflow-y: scroll;
@@ -147,9 +131,9 @@ body::-webkit-scrollbar {
     width: 0;
 }
 .greetingdeck {
-    position: absolute;
+    position: relative;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     top: 0;
@@ -164,12 +148,11 @@ body::-webkit-scrollbar {
     height: 500px;
     width: 600px;
     cursor: pointer;
-    border: 5px solid var(--bluegrey);
     transform: rotate(-10deg);
     transition: all .5s ease-in-out
 }
 .card0.open {
-    background-color: var(--bluegrey);
+    background-color: white;
     transform: translateX(-250px) rotate(-90deg);
 }
 .card0-text {
@@ -184,7 +167,8 @@ body::-webkit-scrollbar {
 .card0.open .card0-text {
     opacity: 1;
     height: auto;
-    width: 400px;
+    width: auto;
+    padding: 6em;
     transform: rotate(90deg);
 }
 .card0 .card0-text h2 {
@@ -216,32 +200,86 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 5em;
     height: auto;
-    width: 400px;
+    width: auto;
     transition: all .5s ease-in-out;
 }
+.card1-text-alt {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    height: auto;
+    width: auto;
+    transition: all .5s ease-in-out;
+    visibility: hidden;
+}
+.card1-text-alt h1 {
+    font-family: "Open Sans";
+    font-size: 2em;
+}
+
 .card1.open .card1-text {
     text-align: center;
     transform: rotate(-90deg);
 }
 .card1-text h1 {
     font-family: "Open Sans";
-    font-size: 100px;
+    font-size: 8em;
 }
 .card1.open .card1-text h1 {
-    font-size: 60px;
+    font-size: 3em;
 }
+.sociallinks {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: auto;
+    margin-bottom: 3em;
+    width: 30%;
+    height: auto;
+    font-size: 3em;
+}
+.sociallinks a{
+    color: white;
+}
+
 .projects {
     position: absolute;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr ;
     grid-template-areas: "p1deck p2deck p3deck"
                          "p4deck p5deck p6deck";
     top: 100%;
     height: 100%;
     width: 100%;
+   
+   
 }
+.gitlink {
+    position: absolute;
+    bottom: .8em;
+    left: 1em;
+}
+.gitlink a{
+    font-size: 2.5em;
+    color: white;
+}
+.filter{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    opacity: 15%;
+    background-color: black;
+}
+/* Portfolio project */
 .p1deck {
     position: relative;
     grid-area: p1deck;
@@ -253,61 +291,50 @@ body::-webkit-scrollbar {
     height: 100%;
     width: 100%;
 }
+/* Bottom card */
 .card2 {
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 400px;
-    width: 500px;
-    cursor: pointer;
-    border: 5px solid var(--blueblack);
+    height: 200px;
+    width: 400px;
     color: var(--bluegrey);
-    transition: all .5s ease-in-out
-}
-.card2.open {
     background-color: var(--blueblack);
-    transform: translateY(200px);
+    transform: translateY(100px);
+    transition: all .5s ease-in-out;
 }
 .card2-text {
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    transition: all .5s ease-in-out;
-}
-.card2.open .card2-text {
     opacity: 1;
     height: auto;
-    width: 300px;
+    width: auto;
+    color: white;
 }
-.card2 .card2-text h2 {
+.card2-text h2 {
     font-family: Bitter;
     font-weight: 100;
-    font-size: 28px;
-    visibility: hidden;
-}
-.card2.open .card2-text h2{
+    font-size: 1.25em;
+    padding: 2em;
     visibility: visible;
-} 
+}
+/* Top card */
 .card3{
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 400px;
-    width: 500px;
+    height: 200px;
+    width: 400px;
     cursor: pointer;
-    background-color: var(--blueblack);
-    transition: all .5s ease-in-out;
-}
-.card3.open {
     background-image: url("portfolio.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    transform: translateY(-200px);
-    transform: translateY(-200px);
+    transform: translateY(-100px);
+    transition: all .5s ease-in-out;
 }
 .card3-text {
     position: absolute;
@@ -315,14 +342,14 @@ body::-webkit-scrollbar {
     justify-content: center;
     align-items: center;
     height: auto;
-    width: 200px;
+    width: auto;
     color: white;
-    transition: all .5s ease-in-out;
 }
 .card3-text h1 {
     font-family: "Open Sans";
-    font-size: 60px;
+    font-size: 3em;
 }
+/* Hungry project */
 .p2deck {
     position: relative;
     grid-area: p2deck;
@@ -331,79 +358,127 @@ body::-webkit-scrollbar {
     justify-content: center;
     align-items: center;
     top: 0;
-    height: auto;
-    width: auto;
 }
+/* Bottom card */
 .card4 {
     position: absolute;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    height: 400px;
-    width: 500px;
-    cursor: pointer;
-    border: 5px solid var(--blueblack);
-    color: var(--bluegrey);
-    transition: all .5s ease-in-out
-}
-.card4.open {
+    height: 200px;
+    width: 400px;
+    color: white; 
     background-color: var(--blueblack);
-    transform: translateY(200px);
+    transform: translateY(100px);
+    transition: all .5s ease-in-out;
 }
 .card4-text {
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    transition: all .5s ease-in-out;
+    padding: 2em;
+    height: 100%;
+    width: 100%;
 }
-.card4.open .card4-text {
-    opacity: 1;
-    height: auto;
-    width: 300px;
-}
-.card4 .card4-text h2 {
+.card4-text h2 {
     font-family: Bitter;
     font-weight: 100;
-    font-size: 28px;
-    visibility: hidden;
+    font-size: 1.25em;
 }
-.card4.open .card4-text h2{
-    visibility: visible;
-} 
+/* Top card */
 .card5{
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 400px;
-    width: 500px;
-    cursor: pointer;
-    background-color: var(--blueblack);
-    transition: all .5s ease-in-out;
-}
-.card5.open {
+    height: 200px;
+    width: 400px;
     background-image: url("hungry.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    transform: translateY(-200px);
+    transform: translateY(-100px);
+    transition: all .5s ease-in-out;
 }
-
-
 .card5-text {
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     height: auto;
-    width: 200px;
+    width: auto;
     color: white;
     transition: all .5s ease-in-out;
 }
 .card5-text h1 {
     font-family: "Open Sans";
-    font-size: 60px;
+    font-size: 3em;
+}
+/* Drag-racer project */
+.p3deck {
+    position: relative;
+    grid-area: p3deck;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+}
+/* Bottom card */
+.card6 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 200px;
+    width: 400px;
+    color: white; 
+    background-color: var(--blueblack);
+    transform: translateY(100px);
+    transition: all .5s ease-in-out;
+}
+.card6-text {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    height: 100%;
+    width: 100%;
+}
+.card6-text h2 {
+    font-family: Bitter;
+    font-weight: 100;
+    font-size: 1.25em;
+}
+/* Top card */
+.card7{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 400px;
+    background-image: url("hungry.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateY(-100px);
+    transition: all .5s ease-in-out;
+}
+.card7-text {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+    color: white;
+}
+.card7-text h1 {
+    font-family: "Open Sans";
+    font-size: 3em;
 }
 .tech {
     position: absolute;
@@ -413,8 +488,6 @@ body::-webkit-scrollbar {
     width: 100%;
     background-color: orchid;
 }
-
-
 
 
 /* COL3 */
@@ -429,7 +502,6 @@ body::-webkit-scrollbar {
     margin-top: 2em;
     height: 100%;
     width: 100%;
-    /* background-color: teal; */
 }
 .menu-btn {
     position: relative;
@@ -474,7 +546,44 @@ body::-webkit-scrollbar {
 
 /*-------------------------------Multimedia Versions------------------------------------*/
 
-
+@media screen and (max-width: 2100px) {
+    .projects {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: "p1deck"
+                             "p2deck"
+                             "p3deck";
+        
+    }
+    .gitlink a{
+        font-size: 2.25em;
+    }
+    .card2 {
+        width: 300px;
+        transform: translateX(150px);
+    }
+    .card3 {
+        width: 300px;
+        transform: translateX(-150px);
+    }
+    .card4 {
+        width: 300px;
+        transform: translateX(150px);
+    }
+    .card5 {
+        width: 300px;
+        transform: translateX(-150px);
+    }
+  
+    .card6 {
+        width: 300px;
+        transform: translateX(150px);
+    }
+    .card7 {
+        width: 300px;
+        transform: translateX(-150px);
+    }
+}
 
 
 @media screen and (max-width:1760px) {
@@ -491,98 +600,45 @@ body::-webkit-scrollbar {
     .col3 {
         margin: 0;
     }
-    .menu-btn-burger::after {
-        width: 60px;
-        transform: translate(0px, 16px);
-    }
-    .projects {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-template-areas: "p1deck"
-                             "p2deck";
-        padding-top: 4em;
-    }
-    .p1deck{
-        align-items: end;
-        height: 85%;
-    }
-    .card2 {
-        width: 400px;
-    }
-    .card2.open {
-        transform: translateY(0px);
-        transform: translateX(200px);
-    }
-    .card3 {
-        width: 400px;
-    }
-    .card3.open {
-        transform: translateY(0px);
-        transform: translateX(-200px);
-    }
-    .p2deck {
-        align-items: start;
-        height: 85%;
-    }
-    .card4 {
-        width: 400px;
-    }
-    .card4.open {
-        transform: translateY(0px);
-        transform: translateX(200px);
-    }
-    .card5 {
-        width: 400px;
-    }
-    .card5.open {
-        transform: translateY(0px);
-        transform: translateX(-200px);
+    .sociallinks{
+        min-width: 200px;
     }
 }
 @media screen and (max-width: 1070px) {
     .card0 {
-        height: 400px;
-        width: 500px;
+        height: 300px;
+        width: 400px;
     }
     .card0.open {
-        transform: translateY(200px);
+        transform: translateY(150px);
     }
     .card0.open .card0-text {
         transform: rotate(0deg);
+        padding: 1em;
     }
     .card0.open .card0-text h2{
-        font-size: 28px;
+        font-size: 1.25em;
+        padding: 2em;
     }
     .card1{
-        height: 400px;
-        width: 500px;
+        height: 300px;
+        width: 400px;
+    }
+    .card1-text{
+        font-size: 1em;
     }
     .card1.open {
-        transform: translateY(-200px);
+        transform: translateY(-150px);
     }
     .card1.open .card1-text {
         transform: rotate(0deg);
+        padding: 1em;
     }
     .card1.open .card1-text h1 {
-        font-size: 56px;
+       font-size: 3em;
     }
-}
-@media screen and (max-width: 950px) {
-    .card2.open{
-       transform: translateX(0);
-       transition: none;
-    }
-    .card3.open {
-       transform: translateX(0);
-       z-index: -1;
-    }
-    .card4.open {
-       transform: translateX(0);
-       transition: none;
-    }
-    .card5.open {
-       transform: translateX(0);
-       z-index: -1;
+    .sociallinks {
+        margin-bottom: 2em;
     }
 }
 @media  screen and (max-width: 650px){
@@ -593,12 +649,6 @@ body::-webkit-scrollbar {
     .card0.open {
         transform: translateY(150px);
     }
-    .card0.open .card0-text {
-        width: 300px;
-    }
-    .card0.open .card0-text h2 {
-        font-size: 21px;
-    }
     .card1.open {
         transform: translateY(-150px);
     }
@@ -606,25 +656,60 @@ body::-webkit-scrollbar {
         width: 400px;
         height: 300px;
     }
-    .card1-text {
-        width: 350px;
-    }
-    .card1 .card1-text h1{
-        font-size: 80px;
-    }
-    .card1.open .card1-text h1 {
-        font-size: 48px;
-    }
-
-    .card4-text{
-        width: 300;
-    }
+   .sociallinks a{
+    font-size: .8em;
+   }
+   .card2 {
+    width: 200px;
+    height: 250px;
+    transform: translateX(100px);
+   }
+   .card2-text h2{
+    font-size: 1em;
+   }
+   .card3 {
+    width: 200px;
+    height: 250px;
+    transform: translateX(-100px);
+   }
+   .card3-text h1{
+    font-size: 2.4em;
+   }
+   .card4 {
+    width: 200px;
+    height: 250px;
+    transform: translateX(100px);
+   }
+   .card4-text h2{
+    font-size: 1em;
+   }
+   .card5 {
+    width: 200px;
+    height: 250px;
+    transform: translateX(-100px);
+   }
+   .card5-text h1{
+    font-size: 2.4em;
+   }
+   .card6 {
+    width: 200px;
+    height: 250px;
+    transform: translateX(100px);
+   }
+   .card6-text h2{
+    font-size: 1em;
+   }
+   .card7 {
+    width: 200px;
+    height: 250px;
+    transform: translateX(-100px);
+   }
+   .card7-text h1{
+    font-size: 2.4em;
+   }
 }
 
 @media screen and (max-width: 450px) {
-    .main-container{
-        grid-template-rows: .125fr .15fr 1fr;
-    }
     .logo h1 {
         font-size: 48px;
     }
@@ -632,14 +717,12 @@ body::-webkit-scrollbar {
         width: 250px;
         height: 200px;
     }
+    .card0.open .card0-text{
+        padding: 1em;
+        font-size: .6em;
+    }
     .card0.open {
         transform: translateY(100px);
-    }
-    .card0.open .card0-text {
-        width: 200px;
-    }
-    .card0.open .card0-text h2 {
-        font-size: 14px;
     }
     .card1.open {
         transform: translateY(-100px);
@@ -648,49 +731,129 @@ body::-webkit-scrollbar {
         width: 250px;
         height: 200px;
     }
-    .card1-text {
-        width: 200px;
-    }
     .card1 .card1-text h1{
-        font-size: 60px;
+        font-size: 4em;
     }
     .card1.open .card1-text h1 {
-        font-size: 32px;
+        font-size: 2em;
     }
-    .p1deck{
-        align-items: center;
-        height: 60%;
-    }
-    .card2 {
-        width: 250px;
-        height: 200px;
-    }
-    .card2 .card2-text h2 {
-        font-size: 20px;
-    }
-    .card3 {
-        width: 250px;
-        height: 200px;
-    }
-    .card3-text h1 {
-        font-size: 52px;
-    }
-    .p2deck {
-        align-items: center;
-        height: 60%;
-    }
-    .card4 {
-        width: 250px;
-        height: 200px;
-    }
-    .card4 .card4-text h2 {
-        font-size: 20px;
-    }
-    .card5 {
-        width: 250px;
-        height: 200px;
+        .card2 {
+        width: 200px;
+        height: 250px;
+        transform: translateX(0px);
+       }
+       .card2-text h2{
+        font-size: 1em;
+       }
+       .card3 {
+        width: 200px;
+        height: 250px;
+        transform: translateX(0px);
+        visibility: visible;
+       }
+       .card3.open {
+        visibility: hidden;
+       }
+       .card3-text h1{
+        font-size: 2.4em;
+       }
+       .card4 {
+        width: 200px;
+        height: 250px;
+        transform: translateX(0px);
+       }
+       .card4-text h2{
+        font-size: 1em;
+       }
+       .card5 {
+        width: 200px;
+        height: 250px;
+        transform: translateX(0px);
+        visibility: visible;
+       }
+       .card5.open {
+        visibility: hidden;
+       }
+       .card5-text h1{
+        font-size: 2.4em;
+       }
+       .card6 {
+        width: 200px;
+        height: 250px;
+        transform: translateX(0px);
+       }
+       .card6-text h2{
+        font-size: 1em;
+       }
+       .card7 {
+        width: 200px;
+        height: 250px;
+        transform: translateX(0px);
+        visibility: visible;
+       }
+       .card7.open {
+        visibility: hidden;
+       }
+       .card7-text h1{
+        font-size: 2.4em;
+       }
+}
+
+@media screen and (max-height: 1100px){
+    .projects{
+        height: 150%;
     }
 }
 
+@media screen and (max-height: 800px){
+    .sociallinks{
+        margin-bottom: .6em;
+    }
+    .sociallinks a{
+        font-size: .6em;
+    }
+}
+
+@media screen and (max-height: 700px){
+    .projects{
+        height: 200%;
+    }
+    .card1-text{
+        visibility: hidden;
+    }
+    .card1-text-alt{
+        visibility: visible;
+    }
+    .card1.open .card1-text-alt{
+        visibility: hidden;
+    }
+    .card0{
+        transform: translate(0px);
+        transform: rotate(0deg);
+    }
+   
+    .card0.open{
+        transform: translate(0px);
+        transform: rotate(0deg);
+        visibility: visible;
+    }
+    .card1{
+        transform: translate(0px);
+        transform: rotate(0deg);
+    }
+    .card1.open{
+        transform: translate(0px);
+        transform: rotate(0deg);
+        visibility: hidden;
+    }
+    .card1.open .card1-text h1{
+        visibility: hidden;
+    }
+}
+@media screen and (max-height: 600px){
+    .projects{
+        height: 250%;
+    }
+}
 
 
