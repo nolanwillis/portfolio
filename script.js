@@ -130,7 +130,7 @@ card6.addEventListener('click', () => {
   }
 })
 
-card3.addEventListener('click', () => {
+card7.addEventListener('click', () => {
   if(!p3DeckUnfold){
       card6.classList.add('open')
       card7.classList.add('open')
@@ -140,6 +140,33 @@ card3.addEventListener('click', () => {
       card6.classList.remove('open')
       card7.classList.remove('open')
       p3DeckUnfold = false;
+  }
+})
+
+/* Dungeon Defender */
+card8.addEventListener('click', () => {
+  if(!p4DeckUnfold){
+      card8.classList.add('open')
+      card9.classList.add('open')
+      p4DeckUnfold = true;
+  }
+  else {
+      card8.classList.remove('open')
+      card9.classList.remove('open')
+      p4DeckUnfold = false;
+  }
+})
+
+card9.addEventListener('click', () => {
+  if(!p4DeckUnfold){
+      card8.classList.add('open')
+      card9.classList.add('open')
+      p4DeckUnfold = true;
+  }
+  else {
+      card8.classList.remove('open')
+      card9.classList.remove('open')
+      p4DeckUnfold = false;
   }
 })
 

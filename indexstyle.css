@@ -220,14 +220,15 @@ body::-webkit-scrollbar {
     position: absolute;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr ;
+    grid-template-rows: 1fr 1fr;
+    
     grid-template-areas: "p1deck p2deck p3deck"
                          "p4deck p5deck p6deck";
     top: 100%;
     height: 100%;
     width: 100%;
-   
-   
+    padding-top: 10em;
+    padding-bottom: 10em;
 }
 .gitlink {
     position: absolute;
@@ -245,7 +246,7 @@ body::-webkit-scrollbar {
     align-items: center;
     height: 100%;
     width: 100%;
-    opacity: 15%;
+    opacity: 60%;
     background-color: black;
 }
 /* Portfolio project */
@@ -384,7 +385,7 @@ body::-webkit-scrollbar {
     font-family: "Open Sans";
     font-size: 3em;
 }
-/* Drag-racer project */
+/* CIS453 Projects */
 .p3deck {
     position: relative;
     grid-area: p3deck;
@@ -446,6 +447,72 @@ body::-webkit-scrollbar {
     color: white;
 }
 .card7-text h1 {
+    font-family: "Open Sans";
+    font-size: 3em;
+}
+/* Dungeon Defender Project */
+.p4deck {
+    position: relative;
+    grid-area: p4deck;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+}
+/* Bottom card */
+.card8{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 200px;
+    width: 400px;
+    color: white; 
+    background-color: var(--blueblack);
+    transform: translateY(100px);
+    transition: all .5s ease-in-out;
+}
+.card8-text {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    height: 100%;
+    width: 100%;
+}
+.card8-text h2 {
+    font-family: Bitter;
+    font-weight: 100;
+    font-size: 1.25em;
+}
+/* Top card */
+.card9{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 400px;
+    background-image: url("dungeondefenderimage.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateY(-100px);
+    transition: all .5s ease-in-out;
+}
+.card9-text {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+    color: white;
+    padding-left: 6em;
+}
+.card9-text h1 {
     font-family: "Open Sans";
     font-size: 3em;
 }
@@ -518,10 +585,11 @@ body::-webkit-scrollbar {
 @media screen and (max-width: 2100px) {
     .projects {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
         grid-template-areas: "p1deck"
                              "p2deck"
-                             "p3deck";
+                             "p3deck"
+                             "p4deck";
         
     }
     .gitlink a{
@@ -543,12 +611,19 @@ body::-webkit-scrollbar {
         width: 300px;
         transform: translateX(-150px);
     }
-  
     .card6 {
         width: 300px;
         transform: translateX(150px);
     }
     .card7 {
+        width: 300px;
+        transform: translateX(-150px);
+    }
+    .card8 {
+        width: 300px;
+        transform: translateX(150px);
+    }
+    .card9 {
         width: 300px;
         transform: translateX(-150px);
     }
@@ -574,6 +649,12 @@ body::-webkit-scrollbar {
     }
     .sociallinks{
         min-width: 300px;
+    }
+    .card9-text {
+        padding-left: 4em;
+    }
+    .card9-text h1 {
+        font-size: 2.6em;
     }
 }
 @media screen and (max-width: 1070px) {
@@ -615,6 +696,9 @@ body::-webkit-scrollbar {
     }
 }
 @media  screen and (max-width: 650px){
+    .projects{
+        padding: 0;
+    }
     .card0 {
         width: 400px;
         height: 300px;
@@ -630,52 +714,70 @@ body::-webkit-scrollbar {
         height: 300px;
     }
    .card2 {
-    width: 200px;
-    height: 250px;
-    transform: translateX(100px);
+        width: 200px;
+        height: 250px;
+        transform: translateX(100px);
    }
    .card2-text h2{
-    font-size: 1em;
+        font-size: 1em;
    }
    .card3 {
-    width: 200px;
-    height: 250px;
-    transform: translateX(-100px);
+        width: 200px;
+        height: 250px;
+        transform: translateX(-100px);
    }
    .card3-text h1{
-    font-size: 2.4em;
+        font-size: 2.4em;
    }
    .card4 {
-    width: 200px;
-    height: 250px;
-    transform: translateX(100px);
+        width: 200px;
+        height: 250px;
+        transform: translateX(100px);
    }
    .card4-text h2{
-    font-size: 1em;
+        font-size: 1em;
    }
    .card5 {
-    width: 200px;
-    height: 250px;
-    transform: translateX(-100px);
+        width: 200px;
+        height: 250px;
+        transform: translateX(-100px);
    }
    .card5-text h1{
-    font-size: 2.4em;
+        font-size: 2.4em;
    }
    .card6 {
-    width: 200px;
-    height: 250px;
-    transform: translateX(100px);
+        width: 200px;
+        height: 250px;
+        transform: translateX(100px);
    }
    .card6-text h2{
-    font-size: 1em;
+        font-size: 1em;
    }
    .card7 {
-    width: 200px;
-    height: 250px;
-    transform: translateX(-100px);
+        width: 200px;
+        height: 250px;
+        transform: translateX(-100px);
    }
    .card7-text h1{
-    font-size: 2.4em;
+        font-size: 2.4em;
+   }
+   .card8 {
+        width: 200px;
+        height: 250px;
+        transform: translateX(100px);
+   }
+   .card8-text h2{
+        font-size: 1em;
+   }
+   .card9 {
+        width: 200px;
+        height: 250px;
+        transform: translateX(-100px);
+   }
+   .card9-text h1{
+        padding-left: 0;
+        padding-right: 1.75em;
+        font-size: 2.4em;
    }
 }
 
@@ -710,66 +812,90 @@ body::-webkit-scrollbar {
     .sociallinks {
         bottom: 2em;
     }
-        .card2 {
+    .projects {
+        overflow-y: scroll;
+        background-color: orange;
+    }
+    .card2 {
         width: 200px;
         height: 250px;
         transform: translateX(0px);
-       }
-       .card2-text h2{
+    }
+    .card2-text h2{
         font-size: 1em;
-       }
-       .card3 {
+    }
+    .card3 {
         width: 200px;
         height: 250px;
         transform: translateX(0px);
         visibility: visible;
-       }
-       .card3.open {
+    }
+    .card3.open {
         visibility: hidden;
-       }
-       .card3-text h1{
+    }
+    .card3-text h1{
         font-size: 2.4em;
-       }
-       .card4 {
+    }
+    .card4 {
         width: 200px;
         height: 250px;
         transform: translateX(0px);
-       }
-       .card4-text h2{
+    }
+    .card4-text h2{
         font-size: 1em;
-       }
-       .card5 {
+    }
+    .card5 {
         width: 200px;
         height: 250px;
         transform: translateX(0px);
         visibility: visible;
-       }
-       .card5.open {
+    }
+    .card5.open {
         visibility: hidden;
-       }
-       .card5-text h1{
+    }
+    .card5-text h1{
         font-size: 2.4em;
-       }
-       .card6 {
+    }
+    .card6 {
         width: 200px;
         height: 250px;
         transform: translateX(0px);
-       }
-       .card6-text h2{
+    }
+    .card6-text h2{
         font-size: 1em;
-       }
-       .card7 {
+    }
+    .card7 {
         width: 200px;
         height: 250px;
         transform: translateX(0px);
         visibility: visible;
-       }
-       .card7.open {
+    }
+    .card7.open {
         visibility: hidden;
-       }
-       .card7-text h1{
+    }
+    .card7-text h1{
         font-size: 2.4em;
-       }
+    }
+    .card8 {
+        width: 200px;
+        height: 250px;
+        transform: translateX(0px);
+    }
+    .card8-text h2{
+        font-size: 1em;
+    }
+    .card9 {
+        width: 200px;
+        height: 250px;
+        transform: translateX(0px);
+        visibility: visible;
+    }
+    .card9.open {
+        visibility: hidden;
+    }
+    .card9-text h1{
+        font-size: 2.4em;
+    }
 }
 
 @media screen and (max-height: 1100px){
