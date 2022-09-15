@@ -140,14 +140,14 @@ body::-webkit-scrollbar {
 .card0.open .card0-text {
     opacity: 1;
     height: auto;
-    width: auto;
+    width: 400px;
     padding: 6em;
+    font-size: 1.25em;
+    font-family: Bitter;
     transform: rotate(90deg);
 }
-.card0 .card0-text h2 {
-    font-family: Bitter;
-    font-weight: 100;
-    font-size: 32px;
+.card0-text h2 {
+    
     visibility: hidden;
 }
 .card0.open .card0-text h2{
